@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.DS_Store
+/.idea
+/.vscode
+**/*.local
+coverage/
+*.log
+
+# 保留 copilot-instructions.md（不得忽略）
+!copilot-instructions.md

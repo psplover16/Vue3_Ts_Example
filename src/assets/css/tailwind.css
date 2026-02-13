@@ -1,0 +1,5 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 可以在這裡放置客製化 CSS，必要時可改用 SCSS（依專案規範） */

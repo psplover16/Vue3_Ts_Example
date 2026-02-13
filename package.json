@@ -1,0 +1,38 @@
+{
+    "name": "ts-vue-learning",
+    "version": "0.1.0",
+    "private": true,
+    "description": "Vue3 + TypeScript + Vite 學習專案，依 copilot-instructions.md 規範建立",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview --port 4173",
+        "test": "vitest run",
+        "lint": "eslint \"src/**/*.{ts,vue}\" \"tests/**/*.ts\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "18.16.19",
+        "@vitejs/plugin-vue": "5.0.2",
+        "@typescript-eslint/eslint-plugin": "6.17.0",
+        "@typescript-eslint/parser": "6.17.0",
+        "typescript": "5.2.2",
+        "vite": "5.2.0",
+        "vitest": "1.0.0",
+        "@vue/test-utils": "2.4.0",
+        "eslint": "8.57.0",
+        "eslint-config-prettier": "9.1.0",
+        "eslint-plugin-vue": "9.20.1",
+        "tailwindcss": "3.4.7",
+        "postcss": "8.4.27",
+        "autoprefixer": "10.4.14"
+    },
+    "dependencies": {
+        "vue": "3.4.6",
+        "vue-router": "4.2.4",
+        "axios": "1.5.0",
+        "pinia": "2.1.7"
+    }
+}
