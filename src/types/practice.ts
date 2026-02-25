@@ -51,7 +51,7 @@ export interface PracticeReadOnlyDictionary {
   length: number; // 仍視為readonly
 }
 
-export interface PracticeArr extends Array<string> {}
+export interface PracticeArr extends Array<string> { }
 // export type PracticeArr = string[];
 
 // 做class範例
@@ -68,3 +68,43 @@ export interface ClockInterface {
   currentTime: Date;
   setTime(d: Date): void;
 }
+
+// 繼承的混合
+class Control {
+  private state: any;
+}
+
+interface Shape {
+  color: string;
+}
+
+interface PenStroke {
+  penWidth: number;
+}
+
+interface UI extends Shape, PenStroke {
+  sideLength: number;
+}
+
+interface SelectableControl extends Control {
+  select(): void;
+}
+
+class Button extends Control implements SelectableControl, UI {
+  select() { return 123 }
+  penWidth: number;
+  sideLength: number;
+  color: string;
+  constructor(penWidth: number, sideLength: number, color: string) {
+    super();
+    this.penWidth = penWidth;
+    this.sideLength = sideLength;
+    this.color = color;
+  }
+}
+
+// 介面如果繼承了某個 class，而那個 class 有 private / protected 成員，那麼「能實作該介面」的 class，必須同時是那個 class 的子類別（或同一繼承鏈上），否則就算你把方法都寫齊也不行
+// class Image implements SelectableControl {
+//   select() { }
+// }
+// 
