@@ -6,7 +6,8 @@ import AboutView from '@/views/AboutView.vue';
 
 // 路由設定：示範前端路由的基礎概念
 export const routes: RouteRecordRaw[] = [
-  { path: '/', name: 'home', component: HomeView },
+  { path: '/', name: '', redirect: { name: 'practice' } },
+  { path: '/home', name: 'home', component: HomeView },
   { path: '/forms', name: 'forms', component: FormValidationView },
   {
     path: '/crud',
@@ -14,5 +15,6 @@ export const routes: RouteRecordRaw[] = [
     component: CrudView,
     meta: { requiresAuth: true }
   },
-  { path: '/about', name: 'about', component: AboutView }
+  { path: '/about', name: 'about', component: AboutView },
+  { path: '/practice', name: 'practice', component: () => import('@/views/PracticeView.vue') },
 ];
