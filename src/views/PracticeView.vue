@@ -9,7 +9,10 @@ import {
   PracticeArr,
   ClockConstructor,
   ClockInterface,
-} from "@/types/practice";
+} from "@/types/typePractice";
+import { useLogger } from "@/composables/useLogger";
+const logger = useLogger();
+import classPractice from "@/composables/classPractice";
 
 let tmpConfig = {
   color: "red",
@@ -111,6 +114,10 @@ const handleClick = (types: string): void => {
         }, 2000);
         //
       }
+      break;
+    case "ClassPractice":
+      classPractice();
+      logger.log("Hello");
       break;
     default:
       console.log("Unknown type");

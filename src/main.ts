@@ -1,11 +1,13 @@
-import { createApp } from 'vue';
-import App from './App.vue';
-import router from './router';
-import { pinia } from './stores';
-import './assets/css/tailwind.css';
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import { pinia } from "./stores";
+import "./assets/css/tailwind.css";
+import { LoggerPlugin } from "@/plugins/logger.plugin";
 
 // 入口: 建立 Vue 應用並掛載
 const app = createApp(App);
 app.use(pinia);
 app.use(router);
-app.mount('#app');
+app.use(LoggerPlugin);
+app.mount("#app");
