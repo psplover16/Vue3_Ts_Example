@@ -13,6 +13,7 @@ import {
 import { useLogger } from "@/composables/useLogger";
 const logger = useLogger();
 import classPractice from "@/composables/classPractice";
+import getTypePractice from "@/composables/typePractice";
 
 let tmpConfig = {
   color: "red",
@@ -67,6 +68,13 @@ class Clock implements ClockInterface {
     console.log("Clock destroyed");
   }
 }
+
+//
+
+// 把一個函式，指定給一個「有明確函式型別」的變數
+let myAdd: (baseValue: number, increment: number) => number = function (x, y) {
+  return x + y;
+};
 //
 const handleClick = (types: string): void => {
   console.log("Clicked!", types);
@@ -119,6 +127,12 @@ const handleClick = (types: string): void => {
       classPractice();
       logger.log("Hello");
       break;
+    case "myAdd":
+      logger.log(`myAdd(5, 10) = ${myAdd(5, 10)}`);
+      break;
+    case "typePractice":
+      getTypePractice();
+      break;
     default:
       console.log("Unknown type");
   }
@@ -132,6 +146,8 @@ const handleClick = (types: string): void => {
   <div class="clickBtn" @click="handleClick('ClassPractice')">
     ClassPractice
   </div>
+  <div class="clickBtn" @click="handleClick('myAdd')">有明確函式型別</div>
+  <div class="clickBtn" @click="handleClick('typePractice')">各類type練習</div>
 </template>
 
 <style>
