@@ -59,6 +59,18 @@ export default function getTypePractice() {
         console.log(a + BigInt(b)); // 15n
     }
     getBigIntExample();
+    // void 有執行完，但沒有回傳值，實際上等價於 undefined。
+    function voidPractice(): void {
+        console.log("This function returns void");
+    }
+    // never 永遠不會回傳的函式 (永遠不會執行完)
+    // 型別never用途: 1. 表示永遠不會有回傳值的函式（例如：永遠丟出錯誤的函式）。
+    // 2. 在型別層面上，當一個條件型別的分支永遠不會成立時，可以使用never來表示該分支的型別。
+    // never 是所有型別的子型別，但沒有東西可以賦給 never
+    function neverPractice(message: string): never {
+        throw new Error(message)
+    }
+    // var是 function scope，let/const 是 block scope
     // 
     function getSymbolExample() {
         const secretKey = Symbol(); // 每次呼叫 Symbol() 都會產生一個獨一無二的 Symbol 值，方便建立不會衝突的物件屬性。

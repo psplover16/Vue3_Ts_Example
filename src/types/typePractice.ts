@@ -19,10 +19,13 @@ export type PracticeFunc = (
   parameter3?: string,
 ) => boolean;
 
+// 型別描述工具」，用來描述物件的形狀
 export interface PracticeSp1 {
-  (startNum: number): string;
-  interval: number;
-  reset(): void;
+  (startNum: number): string; // 函式類型，內部有 function (startNum: number) { return "xxx"; }，這東西
+  // [index: number]: number; // 索引類型，用數字 key 存取時，回傳 number obj[0] → number
+  // readonly [test: string]: number; // 索引類型，任何 string key 都是 readonly number  obj["abc"] → number（不能改）
+  interval: number; // 屬性類型，obj.interval → number
+  reset(): void; // 方法類型，obj.reset() → void ，這東西裡面有一個函數 reset，呼叫它會回傳 void（沒有回傳值）
 }
 
 // eslint-disable-next-line @typescript-eslint/prefer-function-type
